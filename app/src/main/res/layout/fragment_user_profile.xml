@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".app.ui.pages.userprofile.UserProfileFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.driimovies.app.ui.pages.userprofile.UserProfileViewModel"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+            android:title="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.email}"
+            tools:text="andrii@driimoview.com"/>
+
+    </FrameLayout>
+
+</layout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.driimovies.app.ui.pages.moviedetails.MovieDetailsViewModel" />
+
+    </data>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:background="@android:color/white">
+
+       <Toolbar
+           android:id="@+id/toolbar"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/colorPrimary"
+           android:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+           android:title="@string/app_name"/>
+
+       <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="8dp">
+
+               <ImageView
+                   android:id="@+id/poster"
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   app:layout_constraintDimensionRatio="2:3"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   tools:background="@color/colorLightGray" />
+
+               <TextView
+                   android:id="@+id/title"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:ellipsize="end"
+                   android:lines="1"
+                   android:text="@{viewModel.movie.originalTitle}"
+                   app:layout_constraintEnd_toEndOf="@+id/poster"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toStartOf="@+id/poster"
+                   app:layout_constraintTop_toBottomOf="@+id/poster"
+                   tools:text="Titanic" />
+
+               <TextView
+                   android:id="@+id/voteAverageTitle"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/MovieDetailsPage_voteAverage"
+                   app:layout_constraintStart_toStartOf="@+id/title"
+                   app:layout_constraintTop_toBottomOf="@+id/title" />
+
+               <TextView
+                   android:id="@+id/voteAverage"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@{Double.toString(viewModel.movie.voteAverage)}"
+                   app:layout_constraintEnd_toEndOf="@+id/poster"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toEndOf="@+id/voteAverageTitle"
+                   app:layout_constraintTop_toTopOf="@+id/voteAverageTitle"
+                   tools:text="1.25" />
+
+               <TextView
+                   android:id="@+id/popularityTitle"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/MovieDetailsPage_popularity"
+                   app:layout_constraintStart_toStartOf="@+id/voteAverageTitle"
+                   app:layout_constraintTop_toBottomOf="@+id/voteAverageTitle" />
+
+               <TextView
+                   android:id="@+id/popularity"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@{Double.toString(viewModel.movie.popularity)}"
+                   app:layout_constraintEnd_toEndOf="@+id/poster"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toEndOf="@+id/popularityTitle"
+                   app:layout_constraintTop_toTopOf="@+id/popularityTitle"
+                   tools:text="1.25" />
+
+               <TextView
+                   android:id="@+id/releaseDateTitle"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/MovieDetailsPage_releaseDate"
+                   app:layout_constraintStart_toStartOf="@+id/title"
+                   app:layout_constraintTop_toBottomOf="@+id/popularityTitle" />
+
+               <TextView
+                   android:id="@+id/releaseDate"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@{viewModel.movie.releaseDate}"
+                   app:layout_constraintEnd_toEndOf="@+id/poster"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toEndOf="@+id/releaseDateTitle"
+                   app:layout_constraintTop_toTopOf="@+id/releaseDateTitle"
+                   tools:text="2017" />
+
+               <TextView
+                   android:id="@+id/originalLanguageTitle"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/MovieDetailsPage_language"
+                   app:layout_constraintBottom_toTopOf="@+id/overview"
+                   app:layout_constraintStart_toStartOf="@+id/title"
+                   app:layout_constraintTop_toBottomOf="@+id/releaseDateTitle" />
+
+               <TextView
+                   android:id="@+id/originalLanguage"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@{viewModel.movie.originalLanguage}"
+                   app:layout_constraintEnd_toEndOf="@+id/poster"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintStart_toEndOf="@+id/originalLanguageTitle"
+                   app:layout_constraintTop_toTopOf="@+id/originalLanguageTitle"
+                   tools:text="English" />
+
+               <TextView
+                   android:id="@+id/overview"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginBottom="8dp"
+                   android:text="@{viewModel.movie.overview}"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/originalLanguageTitle"
+                   tools:text="Titanic was massive on every level, including the casting process. From Matthew McConaughey to Angelina Jolie, dozens of A-listers were considered. Who almost played Jack and Rose?" />
+
+           </androidx.constraintlayout.widget.ConstraintLayout>
+       </ScrollView>
+   </LinearLayout>
+</layout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">DriiMovies</string>
+
+    <string name="ErrorMessage_credentialsNotValid">Email or password is not valid</string>
+    <string name="ErrorMessage_userAlreadyExist">User with same email already exist</string>
+    <string name="ErrorMessage_userNotExistExist">We don\'t recognize this user email or password</string>
+
+
+    <string name="SignInPage_title">Sign In</string>
+    <string name="SignInPage_emailHint">Email</string>
+    <string name="SignInPage_passwordHint">Password</string>
+    <string name="SignInPage_signIn">Sign In</string>
+    <string name="SignInPage_signUp">Sign Up</string>
+
+    <string name="SignUpPage_title">Sign Up</string>
+    <string name="SignUpPage_emailHint">Email</string>
+    <string name="SignUpPage_passwordHint">Password</string>
+    <string name="SignUpPage_signIn">Sign Up</string>
+
+    <string name="MainPage_toolbarTitle">DriiMovies</string>
+    <string name="MainPage_navigationDrawerOpen">open</string>
+    <string name="MainPage_navigationDrawerClose">close</string>
+    <string name="MainPage_profile">Profile</string>
+    <string name="MainPage_signOut">Sign out</string>
+    <string name="MainPage_listViewMode">List</string>
+    <string name="MainPage_tableViewMode">Table</string>
+    <string name="MainPage_listItem_voteAverage">Vote average:\u0020</string>
+    <string name="MainPage_listItem_releaseDate">Release date:\u0020</string>
+
+    <string name="MovieDetailsPage_voteAverage">Vote average:\u0020</string>
+    <string name="MovieDetailsPage_popularity">Popularity:\u0020</string>
+    <string name="MovieDetailsPage_releaseDate">Release date:\u0020</string>
+    <string name="MovieDetailsPage_language">Language:\u0020</string>
+
+</resources>
